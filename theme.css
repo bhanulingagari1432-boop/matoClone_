@@ -1,0 +1,42 @@
+:root {
+  --color-primary: #E23744;
+  --color-primary-contrast: #FFFFFF;
+  --color-bg: #FFFDFB;
+  --color-surface: #FFFFFF;
+  --color-text: #1C1C1C;
+  --color-muted: #737373;
+  --font-heading: 'DM Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --radius: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+.heading-font {
+  font-family: var(--font-heading);
+}
+
+.shadow-soft {
+  box-shadow: 0 16px 45px rgba(28, 28, 28, 0.08);
+}
+
+.shadow-card {
+  box-shadow: 0 4px 20px rgba(28, 28, 28, 0.06);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}

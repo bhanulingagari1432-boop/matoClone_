@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore restaurants — Mato</title>
+  <link rel="stylesheet" href="/theme.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="border-b border-black/5 bg-white">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 lg:px-8"><a href="/" class="heading-font text-3xl font-bold text-[var(--color-primary)]">mato<span class="text-[var(--color-text)]">.</span></a>
+      <div class="flex items-center gap-3"><a href="/cart" class="relative rounded-full border border-black/10 p-2.5">🛒<span data-cart-count class="absolute -right-1 -top-1 hidden h-4 min-w-4 rounded-full bg-[var(--color-primary)] px-1 text-[10px] font-bold text-white">0</span></a><a href="/login" class="rounded-full bg-[var(--color-primary)] px-5 py-2.5 text-sm font-bold text-white">Sign in</a></div>
+    </nav>
+  </header>
+  <main class="mx-auto max-w-7xl px-5 py-12 lg:px-8">
+    <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-widest text-[var(--color-primary)]">Bengaluru · Delivering now</p>
+        <h1 class="heading-font mt-2 text-4xl font-bold">Find your next favorite.</h1>
+      </div>
+      <div class="flex rounded-[var(--radius)] border border-black/10 bg-white px-4 py-3 sm:w-72"><span class="mr-2">⌕</span><input placeholder="Search restaurants or dishes" class="w-full bg-transparent text-sm outline-none"></div>
+    </div>
+    <div class="no-scrollbar mt-10 flex gap-3 overflow-x-auto pb-2"><button class="whitespace-nowrap rounded-full bg-[var(--color-primary)] px-5 py-3 text-sm font-bold text-white">All restaurants</button><button class="whitespace-nowrap rounded-full border border-black/10 bg-white px-5 py-3 text-sm font-semibold">Top rated</button><button class="whitespace-nowrap rounded-full border border-black/10 bg-white px-5 py-3 text-sm font-semibold">Fast delivery</button><button class="whitespace-nowrap rounded-full border border-black/10 bg-white px-5 py-3 text-sm font-semibold">Pure veg</button><button class="whitespace-nowrap rounded-full border border-black/10 bg-white px-5 py-3 text-sm font-semibold">Offers</button></div>
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <article class="overflow-hidden rounded-[var(--radius)] bg-white shadow-card"><img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Restaurant interior">
+        <div class="p-5">
+          <div class="flex justify-between">
+            <h2 class="heading-font text-xl font-bold">The Oven Story</h2><span class="rounded-lg bg-[#eef9ed] px-2 py-1 text-xs font-bold text-[#218b38]">4.7 ★</span>
+          </div>
+          <p class="mt-2 text-sm text-[var(--color-muted)]">Pizza, Italian · ₹₹ · 25–30 min</p>
+          <div class="mt-4 flex items-center justify-between"><span class="text-xs font-semibold text-[var(--color-primary)]">20% OFF up to ₹100</span><a href="#menu" class="text-sm font-bold">View menu →</a></div>
+        </div>
+      </article>
+      <article class="overflow-hidden rounded-[var(--radius)] bg-white shadow-card"><img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800&q=80" alt="Restaurant tables">
+        <div class="p-5">
+          <div class="flex justify-between">
+            <h2 class="heading-font text-xl font-bold">Punjab Grill</h2><span class="rounded-lg bg-[#eef9ed] px-2 py-1 text-xs font-bold text-[#218b38]">4.5 ★</span>
+          </div>
+          <p class="mt-2 text-sm text-[var(--color-muted)]">North Indian, Mughlai · ₹₹₹ · 30–35 min</p>
+          <div class="mt-4 flex items-center justify-between"><span class="text-xs font-semibold text-[var(--color-primary)]">Free delivery</span><a href="#menu" class="text-sm font-bold">View menu →</a></div>
+        </div>
+      </article>
+      <article class="overflow-hidden rounded-[var(--radius)] bg-white shadow-card"><img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80" alt="Burger and fries">
+        <div class="p-5">
+          <div class="flex justify-between">
+            <h2 class="heading-font text-xl font-bold">Burger Singh</h2><span class="rounded-lg bg-[#eef9ed] px-2 py-1 text-xs font-bold text-[#218b38]">4.6 ★</span>
+          </div>
+          <p class="mt-2 text-sm text-[var(--color-muted)]">Burgers, American · ₹ · 20–25 min</p>
+          <div class="mt-4 flex items-center justify-between"><span class="text-xs font-semibold text-[var(--color-primary)]">Buy 1 Get 1</span><a href="#menu" class="text-sm font-bold">View menu →</a></div>
+        </div>
+      </article>
+    </div>
+    <div id="menu" class="mt-20">
+      <div class="flex items-end justify-between">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-widest text-[var(--color-primary)]">Popular near you</p>
+          <h2 class="heading-font mt-2 text-3xl font-bold">Most ordered dishes</h2>
+        </div><a href="/cart" class="text-sm font-bold text-[var(--color-primary)]">Go to cart →</a>
+      </div>
+      <div class="mt-7 grid gap-4 md:grid-cols-2">
+        <div class="flex gap-4 rounded-[var(--radius)] bg-white p-4 shadow-card"><img class="h-24 w-24 rounded-xl object-cover" src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=300&q=80">
+          <div class="flex flex-1 flex-col justify-between">
+            <div>
+              <h3 class="font-bold">Truffle Mushroom Pizza</h3>
+              <p class="mt-1 text-xs text-[var(--color-muted)]">The Oven Story · 4.8 ★</p>
+            </div>
+            <div class="flex items-center justify-between"><strong>₹349</strong><button data-add="1" class="rounded-full bg-[var(--color-primary)] px-4 py-2 text-xs font-bold text-white">Add +</button></div>
+          </div>
+        </div>
+        <div class="flex gap-4 rounded-[var(--radius)] bg-white p-4 shadow-card"><img class="h-24 w-24 rounded-xl object-cover" src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=300&q=80">
+          <div class="flex flex-1 flex-col justify-between">
+            <div>
+              <h3 class="font-bold">Butter Chicken Bowl</h3>
+              <p class="mt-1 text-xs text-[var(--color-muted)]">Punjab Grill · 4.7 ★</p>
+            </div>
+            <div class="flex items-center justify-between"><strong>₹429</strong><button data-add="2" class="rounded-full bg-[var(--color-primary)] px-4 py-2 text-xs font-bold text-white">Add +</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="/script.js"></script>
+</body>
+
+</html>

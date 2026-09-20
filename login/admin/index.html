@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mato — Food, made closer</title>
+  <link rel="stylesheet" href="/theme.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="border-b border-black/5 bg-[var(--color-surface)]">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 lg:px-8">
+      <a href="/" class="heading-font text-3xl font-bold tracking-tight text-[var(--color-primary)]">mato<span class="text-[var(--color-text)]">.</span></a>
+      <div class="hidden items-center gap-8 text-sm font-semibold md:flex">
+        <a href="/restaurants" class="hover:text-[var(--color-primary)]">Explore</a>
+        <a href="/tracking" class="hover:text-[var(--color-primary)]">Track order</a>
+        <a href="/vendor" class="hover:text-[var(--color-primary)]">For restaurants</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="/cart" class="relative rounded-full border border-black/10 p-2.5 hover:border-[var(--color-primary)]" aria-label="Cart">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 2h13m-2 4a1 1 0 100-2 1 1 0 000 2zm-8 0a1 1 0 100-2 1 1 0 000 2z" />
+          </svg>
+          <span data-cart-count class="absolute -right-1 -top-1 hidden h-4 min-w-4 rounded-full bg-[var(--color-primary)] px-1 text-center text-[10px] font-bold leading-4 text-white">0</span>
+        </a>
+        <a href="/login" class="rounded-full bg-[var(--color-primary)] px-5 py-2.5 text-sm font-bold text-white hover:opacity-90">Sign in</a>
+        <button data-menu-toggle class="rounded-full border border-black/10 p-2 md:hidden">☰</button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="hidden border-t border-black/5 px-5 py-4 md:hidden">
+      <div class="flex flex-col gap-4 text-sm font-semibold"><a href="/restaurants">Explore restaurants</a><a href="/tracking">Track order</a><a href="/vendor">For restaurants</a></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="relative overflow-hidden bg-[#fff4f1]">
+      <div class="mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 lg:grid-cols-2 lg:px-8 lg:py-24">
+        <div class="relative z-10">
+          <span class="mb-5 inline-flex rounded-full bg-white px-4 py-2 text-xs font-bold uppercase tracking-widest text-[var(--color-primary)] shadow-card">Good food, good mood</span>
+          <h1 class="heading-font max-w-xl text-5xl font-bold leading-[1.05] tracking-tight sm:text-7xl">Your next<br><span class="text-[var(--color-primary)]">delicious</span> story.</h1>
+          <p class="mt-6 max-w-lg text-lg leading-8 text-[var(--color-muted)]">Discover the best local restaurants, order what you love, and follow every bite all the way to your door.</p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="/restaurants" class="rounded-[var(--radius)] bg-[var(--color-primary)] px-7 py-4 text-center font-bold text-white shadow-soft hover:opacity-90">Explore restaurants</a>
+            <a href="/tracking" class="rounded-[var(--radius)] border border-black/10 bg-white px-7 py-4 text-center font-bold hover:border-[var(--color-primary)]">Track an order <span class="ml-2">→</span></a>
+          </div>
+          <div class="mt-10 flex items-center gap-3">
+            <div class="flex -space-x-2"><img class="h-9 w-9 rounded-full border-2 border-white object-cover" src="https://i.pravatar.cc/80?img=12"><img class="h-9 w-9 rounded-full border-2 border-white object-cover" src="https://i.pravatar.cc/80?img=32"><img class="h-9 w-9 rounded-full border-2 border-white object-cover" src="https://i.pravatar.cc/80?img=49"></div>
+            <div class="text-sm"><strong>12k+ happy foodies</strong>
+              <div class="text-xs text-[var(--color-muted)]">ordering around you</div>
+            </div>
+          </div>
+        </div>
+        <div class="relative lg:pl-10">
+          <div class="absolute -right-10 -top-10 h-64 w-64 rounded-full bg-[#ffd4cc]"></div><img class="relative z-10 mx-auto h-[430px] w-full max-w-md rounded-[32px] object-cover shadow-soft lg:h-[520px]" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=85" alt="A table full of colorful food">
+          <div class="absolute bottom-6 left-0 z-20 rounded-2xl bg-white p-4 shadow-soft sm:left-4">
+            <div class="flex items-center gap-3"><span class="rounded-xl bg-[#fff0ed] p-3 text-xl">⚡</span>
+              <div><strong class="block text-sm">Fast delivery</strong><span class="text-xs text-[var(--color-muted)]">Average 28 mins</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+      <div class="mb-8 flex items-end justify-between">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-widest text-[var(--color-primary)]">Cravings, sorted</p>
+          <h2 class="heading-font mt-2 text-3xl font-bold">What are you in the mood for?</h2>
+        </div><a href="/restaurants" class="hidden text-sm font-bold text-[var(--color-primary)] sm:block">View all →</a>
+      </div>
+      <div class="grid grid-cols-2 gap-4 sm:grid-cols-4"><a href="/restaurants" class="group rounded-[var(--radius)] bg-[#fff4f1] p-5 text-center">
+          <div class="mx-auto mb-3 text-5xl transition group-hover:scale-110">🍕</div><strong>Pizza</strong>
+          <p class="mt-1 text-xs text-[var(--color-muted)]">24 places</p>
+        </a><a href="/restaurants" class="group rounded-[var(--radius)] bg-[#fff8df] p-5 text-center">
+          <div class="mx-auto mb-3 text-5xl transition group-hover:scale-110">🍔</div><strong>Burgers</strong>
+          <p class="mt-1 text-xs text-[var(--color-muted)]">31 places</p>
+        </a><a href="/restaurants" class="group rounded-[var(--radius)] bg-[#eef9ed] p-5 text-center">
+          <div class="mx-auto mb-3 text-5xl transition group-hover:scale-110">🥗</div><strong>Healthy</strong>
+          <p class="mt-1 text-xs text-[var(--color-muted)]">18 places</p>
+        </a><a href="/restaurants" class="group rounded-[var(--radius)] bg-[#f5efff] p-5 text-center">
+          <div class="mx-auto mb-3 text-5xl transition group-hover:scale-110">🍜</div><strong>Asian</strong>
+          <p class="mt-1 text-xs text-[var(--color-muted)]">27 places</p>
+        </a></div>
+    </section>
+    <section class="bg-[var(--color-text)]">
+      <div class="mx-auto flex max-w-7xl flex-col justify-between gap-6 px-5 py-12 text-white sm:flex-row sm:items-center lg:px-8">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-widest text-[#ff9ca2]">Made for local heroes</p>
+          <h2 class="heading-font mt-2 text-3xl font-bold">Grow your restaurant with Mato.</h2>
+        </div><a href="/vendor" class="rounded-[var(--radius)] bg-white px-6 py-3 text-center font-bold text-[var(--color-text)]">Partner with us →</a>
+      </div>
+    </section>
+  </main>
+  <footer class="mx-auto max-w-7xl px-5 py-8 text-sm text-[var(--color-muted)] lg:px-8">
+    <div class="flex flex-col justify-between gap-3 sm:flex-row"><span class="heading-font text-xl font-bold text-[var(--color-primary)]">mato.</span><span>© 2024 Mato Technologies · Made with good taste.</span></div>
+  </footer>
+  <script src="/script.js"></script>
+</body>
+
+</html>

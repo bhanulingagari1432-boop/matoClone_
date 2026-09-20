@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your cart — Mato</title>
+  <link rel="stylesheet" href="/theme.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="border-b border-black/5 bg-white">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 lg:px-8"><a href="/" class="heading-font text-3xl font-bold text-[var(--color-primary)]">mato<span class="text-[var(--color-text)]">.</span></a><a href="/restaurants" class="text-sm font-bold">← Continue browsing</a></nav>
+  </header>
+  <main class="mx-auto max-w-6xl px-5 py-12 lg:px-8">
+    <p class="text-sm font-bold uppercase tracking-widest text-[var(--color-primary)]">Almost there</p>
+    <h1 class="heading-font mt-2 text-4xl font-bold">Your cart</h1>
+    <div class="mt-10 grid gap-8 lg:grid-cols-[1fr_380px]">
+      <section class="rounded-[var(--radius)] bg-white p-6 shadow-card">
+        <div class="flex items-center justify-between border-b border-black/5 pb-5">
+          <div>
+            <h2 class="font-bold">The Oven Story</h2>
+            <p class="mt-1 text-xs text-[var(--color-muted)]">Bengaluru · Delivery in 25–30 mins</p>
+          </div><span class="rounded-full bg-[#fff0ed] px-3 py-1 text-xs font-bold text-[var(--color-primary)]">1 restaurant</span>
+        </div>
+        <div id="cart-items" class="divide-y divide-black/5"></div>
+        <div id="empty-cart" class="hidden py-16 text-center">
+          <div class="text-5xl">🛍️</div>
+          <h3 class="heading-font mt-4 text-xl font-bold">Your cart is waiting</h3>
+          <p class="mt-2 text-sm text-[var(--color-muted)]">Add something delicious to get started.</p><a href="/restaurants" class="mt-5 inline-block rounded-full bg-[var(--color-primary)] px-5 py-3 text-sm font-bold text-white">Browse food</a>
+        </div>
+      </section>
+      <aside class="h-fit rounded-[var(--radius)] bg-white p-6 shadow-card">
+        <h2 class="heading-font text-xl font-bold">Order summary</h2>
+        <div class="mt-6 space-y-4 text-sm">
+          <div class="flex justify-between"><span class="text-[var(--color-muted)]">Item total</span><span id="subtotal">₹0</span></div>
+          <div class="flex justify-between"><span class="text-[var(--color-muted)]">Delivery fee</span><span>₹39</span></div>
+          <div class="flex justify-between"><span class="text-[var(--color-muted)]">Platform fee</span><span>₹5</span></div>
+          <div class="border-t border-black/10 pt-4 text-base font-bold">
+            <div class="flex justify-between"><span>Total</span><span id="total">₹44</span></div>
+          </div>
+        </div>
+        <div class="mt-6 flex gap-2 rounded-xl bg-[#fff8df] p-3 text-xs"><span>🎁</span><span>Use code <strong>MATO20</strong> to save 20% on this order.</span></div><a href="/login" class="mt-6 block rounded-[var(--radius)] bg-[var(--color-primary)] py-4 text-center font-bold text-white">Proceed to checkout →</a>
+      </aside>
+    </div>
+  </main>
+  <script src="/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const items = document.querySelector('#cart-items'),
+        empty = document.querySelector('#empty-cart'),
+        cart = getCart();
+      if (!cart.length) {
+        items.classList.add('hidden');
+        empty.classList.remove('hidden');
+        return;
+      }
+      let subtotal = 0;
+      items.innerHTML = cart.map(item => {
+        subtotal += item.price * item.quantity;
+        return `<div class="flex gap-4 py-5"><img src="${item.image}" class="h-20 w-20 rounded-xl object-cover"><div class="flex flex-1 items-center justify-between"><div><h3 class="font-semibold">${item.name}</h3><p class="mt-1 text-sm text-[var(--color-muted)]">₹${item.price} each</p></div><div class="rounded-full bg-[#fff4f1] px-3 py-2 text-sm font-bold text-[var(--color-primary)]">× ${item.quantity}</div></div></div>`
+      }).join('');
+      document.querySelector('#subtotal').textContent = '₹' + subtotal;
+      document.querySelector('#total').textContent = '₹' + (subtotal + 44);
+    });
+
+  </script>
+</body>
+
+</html>
